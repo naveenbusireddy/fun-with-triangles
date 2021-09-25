@@ -4,9 +4,15 @@ const showMessage = document.querySelector("#output");
 
 
 function calculateHypotenuse() {
-    const lengthOfHypotenuse = Math.hypot(Number(lengths[0].value), Number(lengths[1].value));
+    if(lengths[0].value && lengths[1].value)
+    {
+        const lengthOfHypotenuse = Math.hypot(Number(lengths[0].value), Number(lengths[1].value));
 
-    showMessage.innerText = "The length of hypotenuse is: " + lengthOfHypotenuse;
+        showMessage.innerText = "The length of hypotenuse is: " + lengthOfHypotenuse;
+    } else {
+        showMessage.innerText = "Both lengths are required to calculate Hypotenuse";
+    }
+    
 }
 
 checkHypotenuse.addEventListener("click", calculateHypotenuse);
