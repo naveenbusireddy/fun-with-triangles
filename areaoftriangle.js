@@ -10,7 +10,6 @@ function calculateArea() {
     } else {
         showMessage.innerText = "Base and Height of the triangle is required to calculate the area of triangle";
     }
-
 }
 
 checkArea.addEventListener("click", calculateArea);
