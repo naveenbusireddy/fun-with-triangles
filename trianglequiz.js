@@ -1,6 +1,6 @@
 const quizForm = document.querySelector(".quiz-form");
 const checkScore = document.querySelector("#check-score");
-const showMessage = document.querySelector("#show-message");
+const showMessage = document.querySelector("#output");
 
 const correctAnswers = ["90°", "right angled"];
 
@@ -14,7 +14,7 @@ function checkQuizScore() {
         }
         index = index + 1;
     }
-    showMessage.innerText = "Hey your score is: "+score;
+    showMessage.innerText = "Hey your score is: " + score;
 }
 
 checkScore.addEventListener("click", checkQuizScore);
