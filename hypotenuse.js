@@ -4,13 +4,25 @@ const showMessage = document.querySelector("#output");
 
 
 function calculateHypotenuse() {
-    if (lengths[0].value && lengths[1].value) {
-        const lengthOfHypotenuse = Math.hypot(Number(lengths[0].value), Number(lengths[1].value));
+    const lengthA = Number(lengths[0].value);
+    const lengthB = Number(lengths[1].value);
 
-        showMessage.innerText = "The length of hypotenuse is: " + lengthOfHypotenuse;
-    } else {
-        showMessage.innerText = "Both lengths are required to calculate Hypotenuse";
+    if(lengthA < 0 || lengthB < 0) {
+        showMessage.innerText = "Please enter the positive values";
     }
+    else {
+
+        if (lengthA && lengthB) {
+
+            const lengthOfHypotenuse = Math.hypot(lengthA, lengthB);    
+            showMessage.innerText = "The length of hypotenuse is: " + (lengthOfHypotenuse).toFixed(2);
+
+        } else {
+            showMessage.innerText = "Both lengths are required to calculate Hypotenuse";
+        }
+    }
+
+    
 
 }
 
